@@ -11,58 +11,58 @@ body {
     font-family: "KoHo", serif;
 }
 
-/* Navbar */
+/* ===================== NAVBAR ===================== */
 .navbar {
-    height: 48px; /* Ajuste a altura da navbar */
+    height: 48px;
     background-color: #001435;
     padding: 0 2rem;
-    display: flex; /* Faz a navbar usar flexbox */
-    align-items: center; /* Alinha os itens no centro verticalmente */
-    justify-content: space-between; /* Distribui os itens horizontalmente */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
 nav {
     display: flex;
-    align-items: center; /* Garante que o conteúdo da navbar seja alinhado verticalmente */
-    justify-content: space-between; /* Espaça os itens corretamente */
-    width: 100%; /* Garante que ocupe toda a largura */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-/* Itens da navbar */
 .items {
-    display: flex; /* Flexbox para os itens da navbar */
-    align-items: center; /* Garante alinhamento vertical */
-    gap: 40px; /* Espaço entre os itens */
-    list-style: none; /* Remove os pontos da lista */
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
 }
 
 .items li {
-    display: inline-block; /* Garante que os itens fiquem na mesma linha */
-    position: relative; /* Necessário para o submenu */
+    display: inline-block;
+    position: relative;
 }
 
 .items a {
     color: #f4f4f4;
     text-decoration: none;
     font-size: 16px;
-    display: block; /* Faz com que o link ocupe todo o espaço disponível */
+    display: block;
 }
 
 .items a:hover {
-    color: #0056b3; /* Cor de hover */
+    color: #0056b3;
 }
 
 /* Estilo para o submenu */
 .sub-items {
-    display: none; /* Submenu oculto por padrão */
-    position: absolute; /* Posiciona o submenu abaixo do item */
-    top: 100%; /* Coloca o submenu logo abaixo do item */
+    display: none;
+    position: absolute;
+    top: 100%;
     left: 0;
     background-color: #001435;
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 200px; /* Largura do submenu */
+    width: 200px;
 }
 
 .sub-items li a {
@@ -72,26 +72,76 @@ nav {
 }
 
 .sub-items li a:hover {
-    background-color: #007bff69; /* Cor de hover do submenu */
+    background-color: #007bff69;
     color: #f4f4f4;
 }
 
 /* Mostrar submenu ao passar o mouse */
 .submenu:hover .sub-items {
-    display: block; /* Exibe o submenu quando o item for hover */
+    display: block;
 }
 
-/* Alinhar o submenu para a esquerda */
 .sub-items li {
-    width: 100%; /* Faz com que os itens do submenu ocupem toda a largura disponível */
+    width: 100%;
 }
 
 .items li:not(:last-child) {
-    border-right: 2px solid #f4f4f4; /* Cor e espessura do risco */
-    padding-right: 20px; /* Espaço entre o risco e o próximo item */
+    border-right: 2px solid #f4f4f4;
+    padding-right: 20px;
 }
 
-/* Logo Container */
+/* Estilo do menu hamburguer */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 10;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #f4f4f4;
+}
+
+/* Exibe o menu hamburguer em telas pequenas */
+@media (max-width: 768px) {
+    .items {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #001435;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        padding: 10px 0;
+        z-index: 5;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .items.active {
+        display: flex;
+    }
+
+    .items li {
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .items.active {
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 100%;
+        background-color: #001435;
+    }
+}
+
+/* ===================== LOGO CONTAINER ===================== */
 .logo-container {
     display: flex;
     justify-content: center;
@@ -112,6 +162,7 @@ nav {
     margin-bottom: 10px;
 }
 
+/* ===================== BUTTON ===================== */
 .btn {
     display: inline-block;
     padding: 10px 50px;
@@ -128,7 +179,7 @@ nav {
     background-color: #dddddd;
 }
 
-/* Card */
+/* ===================== CARD ===================== */
 .card-container {
     display: flex;
     justify-content: center;
@@ -169,13 +220,12 @@ nav {
     color: #333;
 }
 
-/* Aproximando os botões */
 .card-buttons a {
     margin-right: 10px;
     margin-left: 10px;
 }
 
-/* Estilos para a seção de notícias */
+/* ===================== SEÇÃO DE NOTÍCIAS ===================== */
 .noticias {
     background-image: url(../img/notices.png);
     margin-top: 100px;
@@ -229,6 +279,7 @@ nav {
     background-color: #003c73;
 }
 
+/* ===================== FOOTER ===================== */
 footer {
     background-color: #0D1726;
     color: white;
@@ -238,14 +289,14 @@ footer {
 .footer-content {
     padding-top: 50px;
     display: flex;
-    justify-content: center; /* Centraliza as seções */
-    gap: 40px; /* Espaçamento entre as seções */
+    justify-content: center;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .footer-section {
-    width: 48%; /* Para dividir igualmente as seções */
+    width: 48%;
 }
 
 .footer-section h3 {
@@ -269,18 +320,17 @@ footer {
 #feb {
     background-color: #f4f4f4;
     height: 106px;
-    display: flex; /* Usando flexbox */
-    align-items: center; /* Centraliza a imagem verticalmente */
+    display: flex;
+    align-items: center;
 }
 
 #feb img {
-    margin-left: 70px; /* Aplica o espaçamento à esquerda */
-    height: auto; /* Garante que a imagem mantenha a proporção */
+    margin-left: 70px;
+    height: auto;
 }
 
 /* ===================== MOBILE FIRST (TELAS MENORES) ===================== */
 @media (max-width: 768px) {
-    /* Ajuste na navbar */
     .navbar {
         flex-direction: column;
         height: auto;
@@ -291,24 +341,9 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        display: none; /* Esconde os itens por padrão */
+        display: none;
     }
 
-    .menu-toggle {
-        display: block;
-        background-color: transparent;
-        border: none;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-
-    .items.active {
-        display: flex; /* Mostra os itens quando o botão for clicado */
-    }
-
-    /* Centraliza e ajusta o logo */
     .logo-container {
         flex-direction: column;
         gap: 40px;
@@ -316,10 +351,9 @@ footer {
     }
 
     .logo img {
-        width: 150px; /* Reduz um pouco o tamanho */
+        width: 150px;
     }
 
-    /* Cards responsivos */
     .card-container {
         flex-direction: column;
         align-items: center;
@@ -327,10 +361,9 @@ footer {
     }
 
     .card {
-        width: 90%; /* Ocupa mais espaço na tela */
+        width: 90%;
     }
 
-    /* Ajuste na seção de notícias */
     .noticias-container {
         flex-direction: column;
         align-items: center;
@@ -340,7 +373,6 @@ footer {
         width: 90%;
     }
 
-    /* Footer responsivo */
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -355,7 +387,7 @@ footer {
 /* ===================== TABLET (TELAS MÉDIAS) ===================== */
 @media (max-width: 1024px) {
     .items {
-        gap: 20px; /* Reduz o espaçamento entre os itens */
+        gap: 20px;
     }
 
     .logo-container {
@@ -365,23 +397,30 @@ footer {
     .card {
         width: 70%;
     }
+
     .noticia {
         width: 80%;
     }
 }
-/* ===================== MOBILE FIRST (TELAS MENORES) ===================== */
+
+/* ===================== ADICIONANDO O ESTILO DOS BOTÕES NO MOBILE ===================== */
 @media (max-width: 768px) {
     .card-buttons {
-        width: 100%; /* Faz os botões ocuparem toda a largura do card */
-        flex-direction: column; /* Alinha os botões em coluna */
-        align-items: center; /* Centraliza os botões */
-        gap: 15px; /* Espaço entre os botões */
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
     .card-btn {
-        width: 80%; /* Botões ocupam 80% da largura do card */
-        padding: 12px 0; /* Ajusta o padding */
-        font-size: 14px; /* Reduz o tamanho da fonte para telas pequenas */
+        width: 80%;
+        padding: 12px 0;
+        font-size: 14px;
     }
 }
 
+@media (max-width: 768px) {
+    .items li:not(:last-child) {
+        border-right: none;
+    }
+}

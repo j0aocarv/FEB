@@ -10,6 +10,9 @@
     <!-- animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
+    <!-- favicon -->
+     <link rel="shortcut icon" href="assets/img/logo-feb.ico" type="image/x-icon">
+
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,17 +30,24 @@
                         <a href="#">INSTITUCIONAL</a>
                         <ul class="sub-items">
                             <li><a href="#">Atos Legais</a></li>
-                            <li><a href="#">Transparencia</a></li>
+                            <li><a href="#">Transparência</a></li>
                         </ul>
                     </li>
                     <li><a href="#">EDITAIS DE COMPRAS</a></li>
                     <li><a href="#">TRABALHE CONOSCO</a></li>
                     <li><a href="#">OUVIDORIA INSTITUCIONAL</a></li>
                     <li><a href="#">CONSELHO CURADOR</a></li>
-
                 </ul>
+                <!-- Botão Hamburguer -->
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </nav>
         </div>
+        
+
 
         <section id="feb">
             <img src="assets/img/logo_feb 1.png" alt="">
@@ -56,19 +66,20 @@
         <div class="card-container" data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
         data-aos-duration="1500">
-            <div class="card">
-                <div class="card-buttons">
-                    <a href="#" class="card-btn" onclick="changeText('visao')">Visão</a>
-                    <a href="#" class="card-btn" onclick="changeText('missao')">Missão</a>
-                    <a href="#" class="card-btn" onclick="changeText('valores')">Valores</a>
-                </div>
-                <div class="card-content">
-                    <p id="card-text">
-                        Aqui vai o conteúdo do card. Você pode falar sobre a visão, missão e valores da sua organização.
-                    </p>
-                </div>
+        <div class="card">
+            <div class="card-buttons">
+                <a href="#" class="card-btn" onclick="changeText('visao'); return false;">Visão</a>
+                <a href="#" class="card-btn" onclick="changeText('missao'); return false;">Missão</a>
+                <a href="#" class="card-btn" onclick="changeText('valores'); return false;">Valores</a>
+            </div>
+            <div class="card-content">
+                <p id="card-text">
+                    
+                </p>
             </div>
         </div>
+    </div>
+    
         <div class="noticias" data-aos="fade-up"
         data-aos-anchor-placement="top-center">
             <h2>NOTÍCIAS</h2>
@@ -117,11 +128,11 @@
             const text = document.getElementById("card-text");
 
             if (section === 'visao') {
-                text.innerHTML = 'Aqui está a Visão da nossa organização. Definimos os objetivos a longo prazo e o impacto que queremos alcançar.';
+                text.innerHTML = 'Ser uma instituição educacional de referência.';
             } else if (section === 'missao') {
-                text.innerHTML = 'Nossa Missão é proporcionar educação de qualidade para formar cidadãos críticos e preparados para o mercado de trabalho.';
+                text.innerHTML = 'Contribuir para a transformação sustentável da sociedade por meio de aprendizagem significativa e promover a autonomia de cidadãos/profissionais capazes de se adaptarem numa sociedade em transformação.';
             } else if (section === 'valores') {
-                text.innerHTML = 'Nossos Valores incluem respeito, compromisso com a qualidade, ética, e responsabilidade social.';
+                text.innerHTML = 'Os valores do UNIFEB, consolidados ao longo do tempo, são: o TRANSPARÊNCIA e HONESTIDADE nos compromissos institucionais; o RESPEITO E ÉTICA nas relações pessoais; o COMPROMETIMENTO E COLABORAÇÃO na execução das atividades para alcance dos resultados; e INCLUSÃO PSICOPEDAGÓGICA buscando a aprendizagem e convivência dentro da diversidade humana.';
             }
         }
     </script>
@@ -130,6 +141,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init(); // Inicializa as animações
+    </script>
+    <script>
+function toggleMenu() {
+    const menu = document.querySelector('.items');
+    menu.classList.toggle('active');
+}
+
     </script>
     
 
